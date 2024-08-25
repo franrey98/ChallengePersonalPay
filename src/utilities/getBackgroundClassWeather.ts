@@ -1,5 +1,4 @@
 export const getBackgroundClassWeather = (weatherMain: string) => {
-  console.log("weatherMain", weatherMain);
   switch (weatherMain) {
     case "Clear":
       return "bg-gradient-to-r from-blue-500 to-yellow-200";
