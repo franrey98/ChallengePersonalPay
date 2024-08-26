@@ -16,16 +16,18 @@ export const searchCity = dispatchable((cityName: string) => {
         `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_KEY}`
       );
 
-      if (result && result.data) {
+      console.log("result.data", result.data);
+
+      if (result.data.length > 0) {
+        console.log("entra el if?");
         dispatch(actions.searchCity(result.data));
-        return result.data; // Retorna los datos aquí
+        return result.data;
       } else {
-        console.log("Search failed, no data returned");
-        return []; // Retorna un array vacío en caso de error
+        console.log("else");
+        dispatch(actions.setError("City not founded"));
       }
     } catch (error) {
-      console.error("Search request failed:", error);
-      return []; // También retorna un array vacío en caso de excepción
+      dispatch(actions.setError("Failed to fetch city data"));
     }
   };
 });
@@ -37,13 +39,17 @@ export const loadCurrentWeather = dispatchable((lat: number, lon: number) => {
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
       );
 
+      console.log("result.data", result.data);
+
       if (result && result.data) {
         dispatch(actions.loadWeatherCity(result.data));
       } else {
-        console.log("Login failed, no data returned");
+        dispatch(
+          actions.setError("No data returned from current weather request")
+        );
       }
     } catch (error) {
-      console.error("Login request failed:", error);
+      dispatch(actions.setError("Failed to fetch current weather data"));
     }
   };
 });
@@ -54,14 +60,15 @@ export const loadForecastWeather = dispatchable((lat: number, lon: number) => {
       const result = await axios.get(
         `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`
       );
-      console.log("result forecast", result);
       if (result && result.data) {
         dispatch(actions.loadForecastWeatherCity(result.data));
       } else {
-        console.log("Login failed, no data returned");
+        dispatch(
+          actions.setError("No data returned from forecast weather request")
+        );
       }
     } catch (error) {
-      console.error("Login request failed:", error);
+      dispatch(actions.setError("Failed to fetch forecast weather data"));
     }
   };
 });
