@@ -1,10 +1,31 @@
-Copiar las variables de entorno, y cambiar las configuraciones necesarias en el archivo:
-$ cp ./src/config/env.dist.ts ./src/config/env.ts
+# Instrucciones para levantar el proyecto
 
-Instalar las dependencias de npm
-npm i
+## 1 - Configurar las variables de entorno
 
-Levantar la web
+Copia las variables de entorno de ejemplo y realiza los cambios necesarios en la configuración:
+cp ./src/config/env.dist.ts ./src/config/env.ts
+
+## 2 - Instalar dependencias
+
+Asegúrate de tener Node.js y npm instalados en tu máquina. Luego, ejecuta el siguiente comando para instalar las dependencias necesarias:
+npm install
+
+## 3 - Levantar el servidor de desarrollo
+
+Para iniciar la aplicación en modo desarrollo, utiliza el siguiente comando:
 npm run dev
+El servidor estará disponible en http://localhost:3000 por defecto.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Ejecución de tests
+
+## 1 - Ejecución de todos los tests
+
+Para ejecutar todos los tests definidos en el proyecto, utiliza:
+npm test
+
+## 2- Ejecución de un test específico
+Si deseas ejecutar un test específico, puedes usar el siguiente comando, reemplazando <test-file-name> con el nombre del archivo del test que deseas ejecutar:
+npm test <test-file-name>
+
+Por ejemplo:
+npm test WeatherOfCity.test.tsx
