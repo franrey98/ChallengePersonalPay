@@ -25,7 +25,7 @@ Para ejecutar todos los tests definidos en el proyecto, utiliza:
 
 ## 2- Ejecución de un test específico
 
-Si deseas ejecutar un test específico, puedes usar el siguiente comando, reemplazando <test-file-name> con el nombre del archivo del test que deseas ejecutar:
+Si deseas ejecutar un test específico, puedes usar el siguiente comando, reemplazando test-file-name con el nombre del archivo del test que deseas ejecutar:
 ### npx jest test-file-name
 
 Por ejemplo:
