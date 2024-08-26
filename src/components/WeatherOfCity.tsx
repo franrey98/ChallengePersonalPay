@@ -1,7 +1,6 @@
 import { useWeather } from "../hooks/useWeather";
 import { format } from "date-fns";
 import Image from "next/image";
-import React, { ChangeEvent } from "react";
 import { Loading } from "./Loading";
 import { capitalizeFirstLetter } from "../utilities/capitalizeFirstLetter";
 import { AnimatePresence, motion } from "framer-motion";

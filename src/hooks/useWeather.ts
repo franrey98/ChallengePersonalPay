@@ -32,7 +32,6 @@ export function useWeather() {
       return;
     }
     await loadNamesCities(cityName);
-    setCityName("");
   };
 
   const handleCitySelect = (city: City) => {

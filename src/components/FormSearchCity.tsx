@@ -1,10 +1,9 @@
 import { useWeather } from "../hooks/useWeather";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { ChangeEvent } from "react";
+import Error from "./Error";
 
 const FormSearchCity = () => {
-  const { cityName, setCityName, handleSubmit, weatherInfo, handleCitySelect } =
-    useWeather();
+  const { cityName, setCityName, handleSubmit, weatherInfo } = useWeather();
 
   return (
     <>
@@ -22,7 +21,7 @@ const FormSearchCity = () => {
           placeholder="Write the name of the city"
           value={cityName}
           onChange={(e) => setCityName(e.target.value)}
-          className="border p-2 text-blue-950"
+          className="border p-2 text-blue-950 text-center"
           maxLength={30}
         />
         <AnimatePresence>
@@ -40,6 +39,7 @@ const FormSearchCity = () => {
           )}
         </AnimatePresence>
       </form>
+      {weatherInfo.error && <Error error={weatherInfo.error} />}
     </>
   );
 };
