@@ -2,7 +2,7 @@ import { Dispatch } from "@reduxjs/toolkit";
 import { actions } from "./weather.slice";
 import axios from "axios";
 import { dispatchable } from "../dispatchable";
-import { API_KEY } from "@/config/env";
+import { API_KEY } from "../../config/env";
 
 export type Action = {
   type: string;

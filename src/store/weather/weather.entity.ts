@@ -68,7 +68,7 @@ export interface Weather {
 export interface Wind {
   speed: number;
   deg: number;
-  gust?: number; // Puede ser opcional
+  gust?: number;
 }
 
 export interface LocalNames {

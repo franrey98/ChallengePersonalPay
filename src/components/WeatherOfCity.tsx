@@ -1,4 +1,4 @@
-import { useWeather } from "@/hooks/useWeather";
+import { useWeather } from "../hooks/useWeather";
 import { format } from "date-fns";
 import Image from "next/image";
 import React, { ChangeEvent } from "react";

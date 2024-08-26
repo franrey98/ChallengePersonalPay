@@ -25,10 +25,4 @@ export default {
   ) => {
     state = action.payload;
   },
-  "weather/test": (
-    state: ForecastWeatherState,
-    action: PayloadAction<ForecastWeatherState>
-  ) => {
-    state = action.payload;
-  },
 };

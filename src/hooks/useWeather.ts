@@ -1,8 +1,8 @@
 import { useState, useCallback, ChangeEvent } from "react";
-import { useAppSelector } from "@/store/root.store";
-import { City } from "@/interfaces/cityInterfaces";
-import { List } from "@/store/weather/weather.entity";
-import { actions } from "@/store/root.store";
+import { useAppSelector } from "../store/root.store";
+import { City } from "../interfaces/cityInterfaces";
+import { List } from "../store/weather/weather.entity";
+import { actions } from "../store/root.store";
 
 export function useWeather() {
   const weatherInfo = useAppSelector((state) => state.weathers);

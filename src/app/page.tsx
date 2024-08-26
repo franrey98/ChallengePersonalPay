@@ -1,6 +1,6 @@
 "use client";
-import FormSearchCity from "@/components/FormSearchCity";
-import WeatherOfCity from "@/components/WeatherOfCity";
+import FormSearchCity from "../components/FormSearchCity";
+import WeatherOfCity from "../components/WeatherOfCity";
 
 export default function Home() {
   return (

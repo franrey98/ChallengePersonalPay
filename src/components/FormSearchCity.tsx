@@ -1,4 +1,4 @@
-import { useWeather } from "@/hooks/useWeather";
+import { useWeather } from "../hooks/useWeather";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { ChangeEvent } from "react";
 

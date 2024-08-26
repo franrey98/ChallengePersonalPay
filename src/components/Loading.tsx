@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const Loading = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div id="loading" className="flex justify-center items-center min-h-screen">
       <motion.div
         className="flex gap-2"
         initial="start"
