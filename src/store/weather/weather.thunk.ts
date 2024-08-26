@@ -16,14 +16,10 @@ export const searchCity = dispatchable((cityName: string) => {
         `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_KEY}`
       );
 
-      console.log("result.data", result.data);
-
       if (result.data.length > 0) {
-        console.log("entra el if?");
         dispatch(actions.searchCity(result.data));
         return result.data;
       } else {
-        console.log("else");
         dispatch(actions.setError("City not founded"));
       }
     } catch (error) {
@@ -38,8 +34,6 @@ export const loadCurrentWeather = dispatchable((lat: number, lon: number) => {
       const result = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
       );
-
-      console.log("result.data", result.data);
 
       if (result && result.data) {
         dispatch(actions.loadWeatherCity(result.data));

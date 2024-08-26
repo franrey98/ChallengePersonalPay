@@ -4,7 +4,7 @@ import Error from "./Error";
 
 const FormSearchCity = () => {
   const { cityName, setCityName, handleSubmit, weatherInfo } = useWeather();
-  console.log("weatherInfo.error", weatherInfo.error);
+
   return (
     <>
       <h1 className="text-4xl font-bold text-white mt-6 mb-4">
