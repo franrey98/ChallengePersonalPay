@@ -1,9 +1,11 @@
 import { useWeather } from "../hooks/useWeather";
 import { AnimatePresence, motion } from "framer-motion";
 import Error from "./Error";
+import { Loading } from "./Loading";
 
 const FormSearchCity = () => {
-  const { cityName, setCityName, handleSubmit, weatherInfo } = useWeather();
+  const { cityName, setCityName, handleSubmit, weatherInfo, loading } =
+    useWeather();
 
   return (
     <>
@@ -39,6 +41,7 @@ const FormSearchCity = () => {
           )}
         </AnimatePresence>
       </form>
+      {loading && <Loading />}
       {weatherInfo.error && <Error error={weatherInfo.error} />}
     </>
   );

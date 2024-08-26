@@ -16,14 +16,18 @@ export function useWeather() {
     actions.weathers.clearWeatherData();
     await actions.weathers.searchCity(cityName);
     setPreviousCityName(cityName);
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
   };
 
   const loadWeather = async (lat: number, lon: number) => {
     setLoading(true);
     await actions.weathers.loadCurrentWeather(lat, lon);
     await actions.weathers.loadForecastWeather(lat, lon);
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
